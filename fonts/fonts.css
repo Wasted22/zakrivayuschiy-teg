@@ -1,5 +1,5 @@
 /* В этом файле вы импортируете все шрифты для сайта. Один из них вариативный и требует особенной настройки */
-@font-face{
+@font-face {
     font-display: swap;
     font-family: 'Inter-Variable';
     src:
@@ -11,7 +11,7 @@
         font-weight: 400 785;
 }
 
-@font-face{
+@font-face {
     font-display: swap;
     font-family: 'PressStart2P';
     src:
