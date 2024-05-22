@@ -215,7 +215,7 @@ filter: brightness(40%);
 }
 
 .card_text:first-child{
-  margin-bottom: 27px;
+  margin-block-end: 27px;
 }
 
 .card_controls{
