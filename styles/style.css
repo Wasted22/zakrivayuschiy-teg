@@ -102,17 +102,6 @@ filter: brightness(40%);
   margin-inline-start: 16px;
 }
 
-.theme-menu__button:disabled::before {
-  content:'▶';
-  position: absolute;
-  left: -15px;
-  animation-duration: 0.5s;
-  animation-name: arrow;
-  animation-iteration-count: infinite;
-  animation-direction:alternate;
-  animation-timing-function: ease-in-out;
-}
-
 .theme-menu__button:disabled {
  opacity: 0.6;
  pointer-events: none;
@@ -143,16 +132,6 @@ filter: brightness(40%);
    .theme-menu__button:hover {
   opacity: 0.6;
 }
-
-@keyframes arrow {
-  from {
-    left: -20px;
-  }
-
-  to {
-    left: -16px;
-  }
-  }
 
 .card {
   background-color: var(--background-color);
@@ -237,6 +216,14 @@ filter: brightness(40%);
   overflow: hidden;
 }
 
+.button:focus {
+  outline:none;
+}
+
+.button:focus-visible {
+  box-shadow: 2px 2px 0 var(--currentColor);
+}
+
 .card__icon-button {
   border: 2px solid transparent;
   background-color: var(--background-color);
@@ -266,116 +253,6 @@ filter: brightness(40%);
   color:var(--mix-blend);
   mix-blend-mode: difference;
 }
-
-.button::after {
-  content: '';
-  display: block;
-  background-color: var(--currentColor);
-  width: 100%;
-  height: 100%;
-  transform: translateX(-100%);
-  position: absolute;
-  inset:0;
-  transition: transform 0.5s ease-in-out;
-}
-
-.button:hover::after {
-  transform: translateX(0);
-}
-
-.button:focus {
-  outline:none;
-}
-
-.button:focus-visible {
-  box-shadow: 2px 2px 0 var(--currentColor);
-}
-
-.like-icon .core {
-fill: var(--background-color);
-transition: fill 0.3s linear 0.03s;
-}
-
-.like-icon:hover .core {
-  fill: var(--currentColor);
-  transition-delay: 0s;
-}
-
-.like-icon:active .core {
-  fill: red;
-  transition-delay: 0s;
-}
-
-.like-icon .main-body {
-  fill: var(--background-color);
-  transition: fill 0.3s linear 0s;
-  }
-  
-  .like-icon:hover .main-body {
-    fill: var(--currentColor);
-    transition-delay: 0.05s;
-  }
-  
-  .like-icon:active .main-body {
-    fill: red;
-    transition-delay: 0.05s;
-  }
-
-  .like-icon .contour {
-    fill: var(--currentColor);
-    transition: fill 0.3s linear 0s;
-  }
-
-  .like-icon.is-liked .contour {
-    fill: red;
-    transition-delay: 0.06s;
-  }
-
-  .like-icon.is-liked .core {
-    fill: red;
-    transition-delay: 0s;
-  }
-
-  .like-icon.is-liked .main-body {
-    fill: red;
-    transition-delay: 0.05s;
-  }
-
-  .like-icon .heart {
-    transform-origin: center center;
-  }
-
-  .like-icon.is-liked .heart {
-    animation: heart-scale 0.3s ease-in 0.1s alternate;
-  }
-
-  .like-icon .sparks {
-    fill:red;
-    opacity:0;
-  }
-
-  .like-icon.is-liked .sparks {
-    animation: color-sparks 0.3s ease-in 0.3s alternate;
-  }
-
-@keyframes heart-scale {
-  from {
-    scale:1;
-  }
-
-  to {
-    scale:1.5;
-  }
-}
-
-@keyframes  color-sparks {
-  from {
-   opacity:0;
-  }
-
-  to {
-    opacity:1;
-  }}
 
   .card-list-item {
     margin-block-end: 50px;
@@ -426,7 +303,7 @@ transition: fill 0.3s linear 0.03s;
   }
 
   @media (width < 376px) {
-    .card_label{
+    .card_label {
       top:23px;
       right: 11px;
     }
