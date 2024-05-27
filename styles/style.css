@@ -4,13 +4,14 @@
   background-image: var(--background-gradient);
   background-size: cover;
   font-family: var(--main-font-family);
+  font-variation-settings: var(--text-wght);
   background-attachment: fixed;
   max-width: 700px;
   margin: 0 auto;
 }
 
 .blur {
-  filter:blur(3px);
+  filter: blur(3px);
 }
 
 .grayscale {
@@ -18,7 +19,7 @@
 }
 
 .sepia {
-  filter:sepia(60%);
+  filter: sepia(60%);
 }
 
 .hue-rotate {
@@ -26,7 +27,7 @@
 }
 
 .brightness {
-filter: brightness(40%);
+  filter: brightness(40%);
 }
 
 .contrast {
@@ -44,12 +45,11 @@ filter: brightness(40%);
 .floppy_dialog {
   width: 39px;
   height: 39px;
-  fill: var(--currentColor);
 }
 
-.floppy_footer {
+.floppy_button {
   width: 21px;
-  fill:var(--mix-blend);
+  fill: var(--mix-blend);
   mix-blend-mode: difference;
   z-index: 2;
 }
@@ -75,7 +75,7 @@ filter: brightness(40%);
 .header_title {
   font-size: clamp(0.875rem, 0.226rem + 2.7692vw, 1.4375rem);
   margin: 20px 0 25px 0;
-  text-transform: uppercase ;
+  text-transform: uppercase;
 }
 
 .theme-menu__button {
@@ -83,7 +83,7 @@ filter: brightness(40%);
   border: none;
   text-transform: uppercase;
   font-size: 14px;
-  height:14px;
+  height: 14px;
   padding: 0;
   position: relative;
   cursor: pointer;
@@ -95,7 +95,7 @@ filter: brightness(40%);
 }
 
 .theme-menu__item {
-  height:14px;
+  height: 14px;
 }
 
 .theme-menu__list {
@@ -103,33 +103,33 @@ filter: brightness(40%);
 }
 
 .theme-menu__button:disabled {
- opacity: 0.6;
- pointer-events: none;
+  opacity: 0.6;
+  pointer-events: none;
 }
 
 .theme-menu__button::after {
-  content:'';
+  content: "";
   width: 100%;
   height: 2px;
-  transform:scaleX(0);
+  transform: scaleX(0);
   opacity: 0.6;
   display: block;
-  background-color: var(--currentColor  );
+  background-color: var(--currentColor);
   transition: transform 0.3s ease;
   transform-origin: left;
 }
 
 .theme-menu__button:focus-visible::after {
-  transform:scaleX(1);
+  transform: scaleX(1);
 }
 
 .theme-menu__button:focus {
-  outline:none;
+  outline: none;
   opacity: 0.6;
 }
 
 .theme-menu__button:focus-visible,
-   .theme-menu__button:hover {
+.theme-menu__button:hover {
   opacity: 0.6;
 }
 
@@ -148,11 +148,12 @@ filter: brightness(40%);
   padding: 3px 10px;
 }
 
-.img-container {
+.img_container {
   border-bottom: 2px solid var(--border-color);
   position: relative;
-  object-fit:cover;
- 
+  object-fit: cover;
+  object-position: center;
+  overflow: hidden;
 }
 
 .card_image {
@@ -170,30 +171,26 @@ filter: brightness(40%);
   font-size: 14px;
   opacity: 0.5;
   text-transform: uppercase;
-  text-shadow:
-  -1px 0 var(--shadow-color), 
-  0 1px var(--shadow-color), 
-  1px 0 var(--shadow-color), 
-   0 -1px var(--shadow-color);
+  text-shadow: -1px 0 var(--shadow-color), 0 1px var(--shadow-color),
+    1px 0 var(--shadow-color), 0 -1px var(--shadow-color);
 }
 
-@supports(-webkit-text-stroke: 1px var(--shadow-color)) {
+@supports (-webkit-text-stroke: 1px var(--shadow-color)) {
   .card_label {
-      -webkit-text-stroke: 1px var(--shadow-color);
-      text-shadow: none;
+    -webkit-text-stroke: 1px var(--shadow-color);
+    text-shadow: none;
   }
 }
 
-.text-container {
+.text_container {
   margin: 25px;
 }
 
 .card_text {
   font-size: 18px;
-  font-weight: var(--text-wght);
 }
 
-.card_text:first-child {
+.card_text:not(:last-child) {
   margin-block-end: 27px;
 }
 
@@ -202,14 +199,14 @@ filter: brightness(40%);
   display: flex;
   justify-content: flex-end;
   height: 38px;
-  gap:5px;
+  gap: 5px;
 }
 
 .button {
   border: 2px solid var(--border-color);
   font-family: var(--accent-font-family);
   font-size: 14px;
-  background-color:var(--background-color);
+  background-color: var(--background-color);
   color: var(--currentColor);
   transition: box-shadow 0.3s ease;
   position: relative;
@@ -217,7 +214,7 @@ filter: brightness(40%);
 }
 
 .button:focus {
-  outline:none;
+  outline: none;
 }
 
 .button:focus-visible {
@@ -250,87 +247,87 @@ filter: brightness(40%);
 .button__text {
   position: relative;
   z-index: 2;
-  color:var(--mix-blend);
+  color: var(--mix-blend);
   mix-blend-mode: difference;
 }
 
-  .card-list-item {
-    margin-block-end: 50px;
+.card_list_item {
+  margin-block-end: 50px;
+}
+
+.button_container {
+  display: flex;
+  justify-content: center;
+  margin-block-end: 105px;
+}
+
+.save_button {
+  display: flex;
+  padding: 15px 20px;
+  gap: 8px;
+  align-items: center;
+}
+
+.dialog {
+  padding: 30px;
+  background-color: var(--background-color);
+  color: var(--currentColor);
+  font-family: var(--accent-font-family);
+  font-size: 14px;
+}
+
+.dialog::backdrop {
+  background-color: rgba(0, 0, 0, 0.75);
+}
+
+.dialog_container {
+  display: flex;
+  gap: 20px;
+  align-items: center;
+  margin-block-end: 30px;
+}
+
+.dialog_text {
+  max-width: 234px;
+  line-height: 21px;
+  text-transform: uppercase;
+}
+
+.dialog_button {
+  width: 100%;
+  height: 38px;
+  text-transform: uppercase;
+}
+
+@media (width < 376px) {
+  .card_label {
+    top: 23px;
+    right: 11px;
   }
 
-  .footer {
-    display: flex;
-    justify-content: center;
-    margin-block-end: 105px;
+  .body {
+    width: 100%;
   }
 
-  .footer_button {
-    display: flex;
-    padding: 15px 20px;
-    gap:8px; 
-    align-items: center;
+  .header {
+    padding-block-start: 120px;
   }
 
-  .dialog { 
-    padding: 30px;
-    background-color: var(--background-color);
-    color: var(--currentColor);
-    font-family: var(--accent-font-family);
-    font-size: 14px;
+  .save_button {
+    flex-direction: column;
   }
 
-  .dialog::backdrop {
-    background-color: rgba(0, 0, 0, 0.75);
+  .floppy_button {
+    width: 28px;
+    height: 28px;
   }
 
-  .dialog_container {
-    display: flex;
-    gap: 20px;
-    align-items: center;
-    margin-block-end: 30px;
+  .dialog {
+    padding: 30px 42px;
+    max-width: calc(100% - 30px);
   }
 
   .dialog_text {
-    max-width: 234px;
-    line-height: 21px;
-    text-transform: uppercase;
+    width: 80%;
   }
-
-  .dialog_button {
-    width: 100%;
-    height:34px;
-    text-transform: uppercase;
-  }
-
-  @media (width < 376px) {
-    .card_label {
-      top:23px;
-      right: 11px;
-    }
-
-    .body {
-      width: 100%;
-    }
-
-    .header {
-      padding: 120px 0 0;
-    }
-
-    .footer_button {
-      flex-direction: column;
-    }
-
-    .floppy_footer {
-      width: 28px;
-      height: 28px;
-    }
-
-    .dialog {
-      padding: 30px 42px;
-      max-width: calc(100% - 30px);                          
-    }
-
-    .dialog_text {
-      width: 80%;
-    }
-  }
+}
